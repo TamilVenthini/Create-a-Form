@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flower Shop Order Form</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Quicksand", sans-serif;
+      background-image: url("https://images.pexels.com/photos/262713/pexels-photo-262713.jpeg");
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: #374151;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      padding: 2.5rem 3rem;
+      width: 100%;
+      max-width: 550px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative flower doodles */
+    .container::before,
+    .container::after {
+      content: "🌸";
+      font-size: 3rem;
+      position: absolute;
+      opacity: 0.3;
+    }
+    .container::before {
+      top: 10px;
+      left: 15px;
+    }
+    .container::after {
+      bottom: 15px;
+      right: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Pacifico", cursive;
+      font-size: 2.5rem;
+      color: #b91c1c; /* deep rose */
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #9333ea;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 2px solid #e9d5ff;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: #faf5ff;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #9333ea;
+      outline: none;
+      box-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
+      background: #fff;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #ec4899, #9333ea);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #db2777, #7e22ce);
+    }
+
+    /* Subtle motivational note */
+    .note {
+      text-align: center;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #6b21a8;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Flower Shop Order Form</h1>
+    <form id="orderForm">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" name="customerName" required />
+
+      <label for="email">E-mail Address:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +91-9876543210" required />
+
+      <label for="flowerType">Choose Flowers:</label>
+      <select id="flowerType" name="flowerType" required>
+        <option value="">-- Select --</option>
+        <option value="tulips"> Tulips</option>
+        <option value="roses"> Roses</option>
+        <option value="lilies"> Lilies</option>
+        <option value="orchids"> Orchids</option>
+        <option value="mixed"> Mixed Bouquet</option>
+      </select>
+
+      <label for="quantity">Quantity (in bunches):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="100" required />
+
+      <label for="deliveryDate">Delivery Date:</label>
+      <input type="date" id="deliveryDate" name="deliveryDate" required />
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="message">Personalized Message (optional):</label>
+      <textarea id="message" name="message" rows="2"></textarea>
+
+      <button type="submit">🌼 Place Order 🌼</button>
+    </form>
+    <p class="note">“Every flower is a soul blossoming in nature.” 🌷</p>
+  </div>
+
+  <script>
+    // Handle form submission with a popup
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent actual form submission
+      alert("🌸 Thank you! Your flower order has been placed successfully 🌸");
+      this.reset(); // Reset form after confirmation
+    });
+  </script>
+</body>
+</html>
+
